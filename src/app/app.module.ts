@@ -7,12 +7,14 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
