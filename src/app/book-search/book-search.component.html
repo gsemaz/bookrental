@@ -34,6 +34,9 @@
             <th>ID</th>
             <th>Title</th>
             <th>Author</th>
+            <th>User ID</th>
+            <th>Loan Date</th>
+            <th>Return Date</th>
             <th></th>
         </tr>
     </thead>
@@ -44,6 +47,9 @@
             <td>{{ book.id }}</td>
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
+            <td> {{book.userId}} </td>
+            <td> {{book.loanDate}} </td>
+            <td> {{book.returnDate}} </td>
             <td>
                 <a
                   (click)="select(book)"
