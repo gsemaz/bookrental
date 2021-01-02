@@ -1,9 +1,24 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "books": [
+    { "id": 1, "title": "title1", "author": "author1", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 2, "title": "title2", "author": "author2", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 3, "title": "title3", "author": "author3", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 4, "title": "title4", "author": "author4", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 5, "title": "title5", "author": "author5", "userID": 0, "loanDate": "", "returnDate": "" },
+    { "id": 6, "title": "title6", "author": "author6", "userID": 0, "loanDate": "", "returnDate": "" },
+    { "id": 7, "title": "title7", "author": "author7", "userID": 0, "loanDate": "", "returnDate": "" },
+    { "id": 8, "title": "title8", "author": "author8", "userID": 0, "loanDate": "", "returnDate": "" }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+  "users": [
+    { "id": 1, "firstname": "firstname1", "lastname": "lastname1" },
+    { "id": 2, "firstname": "firstname2", "lastname": "lastname2" }
   ],
-  "profile": { "name": "typicode" }
+  "reviews": [
+    { "id": 1, "bookId": 1, "userId": 1, "text": "text1" },
+    { "id": 2, "bookId": 1, "userId": 1, "text": "text2" },
+    { "id": 3, "bookId": 2, "userId": 1, "text": "text3" },
+    { "id": 4, "bookId": 2, "userId": 2, "text": "text4" },
+    { "id": 5, "bookId": 2, "userId": 2, "text": "text5" },
+    { "id": 6, "bookId": 2, "userId": 2, "text": "text6" }
+  ]
 }
