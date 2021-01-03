@@ -11,11 +11,20 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  find(author: string): Observable<Book[]> {
+  find(author: string, title: string): Observable<Book[]> {
     const url = 'http://localhost:3000/books';
+    let params;
 
-    const params = new HttpParams()
-      .set('author', author);
+    if (author.length != 0 && title.length != 0) {
+      params = new HttpParams().set('author', author).set('title', title);
+    }
+    else if (author.length != 0) {
+      console.log('test');
+      params = new HttpParams().set('author', author);
+    }
+    else if (title.length != 0) {
+      params = new HttpParams().set('title', title);
+    }
 
     const headers = new HttpHeaders()
       .set('Accept', 'application/json');

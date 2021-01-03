@@ -10,19 +10,18 @@ import { Book } from '../entities/book';
   styleUrls: ['./book-search.component.css']
 })
 export class BookSearchComponent implements OnInit {
-  title = 'title1';
-  author = 'author1';
+  title = '';
+  author = '';
   books: Book[] = [];
   selectedBook: Book;
 
   constructor(private bookService: BookService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   search(): void {
     this.bookService
-      .find(this.author)
+      .find(this.author, this.title)
       .subscribe(
         books => this.books = books
       );
@@ -30,5 +29,7 @@ export class BookSearchComponent implements OnInit {
   
   select(book: Book): void {
     this.selectedBook = book;
+    this.title = book.title;
+    this.author = book.author;
   }
 }

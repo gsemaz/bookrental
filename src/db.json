@@ -1,13 +1,13 @@
 {
   "books": [
     { "id": 1, "title": "title1", "author": "author1", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
-    { "id": 2, "title": "title2", "author": "author2", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
-    { "id": 3, "title": "title3", "author": "author3", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
-    { "id": 4, "title": "title4", "author": "author4", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
-    { "id": 5, "title": "title5", "author": "author5", "userID": 0, "loanDate": "", "returnDate": "" },
-    { "id": 6, "title": "title6", "author": "author6", "userID": 0, "loanDate": "", "returnDate": "" },
-    { "id": 7, "title": "title7", "author": "author7", "userID": 0, "loanDate": "", "returnDate": "" },
-    { "id": 8, "title": "title8", "author": "author8", "userID": 0, "loanDate": "", "returnDate": "" }
+    { "id": 2, "title": "title2", "author": "author1", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 3, "title": "title3", "author": "author1", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 4, "title": "title4", "author": "author2", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+    { "id": 5, "title": "title5", "author": "author2", "userID": 0, "loanDate": "", "returnDate": "" },
+    { "id": 6, "title": "title6", "author": "author3", "userID": 0, "loanDate": "", "returnDate": "" },
+    { "id": 7, "title": "title7", "author": "author4", "userID": 0, "loanDate": "", "returnDate": "" },
+    { "id": 8, "title": "title8", "author": "author5", "userID": 0, "loanDate": "", "returnDate": "" }
   ],
   "users": [
     { "id": 1, "firstname": "firstname1", "lastname": "lastname1" },
