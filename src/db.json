@@ -14,11 +14,11 @@
     { "id": 2, "firstname": "firstname2", "lastname": "lastname2" }
   ],
   "reviews": [
-    { "id": 1, "bookId": 1, "userId": 1, "text": "text1" },
-    { "id": 2, "bookId": 1, "userId": 1, "text": "text2" },
-    { "id": 3, "bookId": 2, "userId": 1, "text": "text3" },
-    { "id": 4, "bookId": 2, "userId": 2, "text": "text4" },
-    { "id": 5, "bookId": 2, "userId": 2, "text": "text5" },
-    { "id": 6, "bookId": 2, "userId": 2, "text": "text6" }
+    { "id": 1, "bookID": 1, "userID": 1, "text": "text1", "reviewTitle": "Best book!", "date": "01.01.2020" },
+    { "id": 2, "bookID": 1, "userID": 1, "text": "text2", "reviewTitle": "Best book!", "date": "01.01.2020" },
+    { "id": 3, "bookID": 2, "userID": 1, "text": "text3", "reviewTitle": "Best book!", "date": "01.01.2020" },
+    { "id": 4, "bookID": 2, "userID": 2, "text": "text4", "reviewTitle": "Best book!", "date": "01.01.2020" },
+    { "id": 5, "bookID": 2, "userID": 2, "text": "text5", "reviewTitle": "Best book!", "date": "01.01.2020" },
+    { "id": 6, "bookID": 2, "userID": 2, "text": "text6", "reviewTitle": "Best book!", "date": "01.01.2020" }
   ]
 }

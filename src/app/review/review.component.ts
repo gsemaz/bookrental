@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { iif } from 'rxjs';
 import { Review } from '../entities/review';
+import { ReviewService } from './review.service';
 
 @Component({
   selector: 'app-review',
@@ -8,24 +8,29 @@ import { Review } from '../entities/review';
   styleUrls: ['./review.component.css']
 })
 export class ReviewComponent implements OnInit {
-  //book: Book;
   reviews: Review[] = [];
   selectedReview: Review;
-  constructor() { }
+
+  constructor(private reviewService: ReviewService) { }
 
   ngOnInit(): void {
+    this.getReviews();
+
   }
 
-  select(review: Review): void
+  open(review: Review): void
   {
     this.selectedReview = review;
   }
 
+  getReviews(): void {
+    this.reviewService.getReviews().subscribe(reviews => this.reviews = reviews);
+  }
+
+
   // edit(): boolean
   // {
   //   if(this.selectedReview.userId != sessionId) return false;
-
-    
   // }
 
 }

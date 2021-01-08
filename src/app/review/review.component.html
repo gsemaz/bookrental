@@ -1,1 +1,32 @@
-<p>review works!</p>
+<h2>Reviews</h2>
+<div class="table" *ngIf="reviews.length">
+    <table class="table table-condensed">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Reviewtitle</th>
+              <th>Book ID</th>
+              <th>User ID</th>
+              <th>Modification Date</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr
+            *ngFor="let review of reviews"
+            [class.active]="selectedReview === review">
+              <td>{{ review.id}}</td>
+              <td>{{ review.reviewTitle }}</td>
+
+            <!-- booktitle-->
+              <td> {{ review.bookID }} </td> 
+
+            <!-- username-->
+              <td> {{review.userID }}</td>
+              <td> {{review.date | date }} </td>
+              <td><a [routerLink]="['/reviews', review.id]">Open</a></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  

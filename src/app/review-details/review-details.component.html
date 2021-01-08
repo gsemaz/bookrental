@@ -1,0 +1,10 @@
+<div *ngIf="review">
+    <h2>{{review.reviewTitle | uppercase}} Details</h2>
+    <div><span>ID: </span>{{review.id}}</div>
+    <div>
+      <label>Review:
+        <input [(ngModel)]="review.text" placeholder="Enter your Review here!"/>
+      </label>
+    </div>
+    <button (click)="goBack()">back to overview</button>
+  </div>

@@ -1,8 +1,8 @@
 export interface Review {
   id: number;
-  userId: number;
-  bookId: number;
+  bookID: number;
+  userID: number;
   text: string;
+  reviewTitle: string;
   date: string; // ISO Date String
-  delayed: boolean;
 }
