@@ -1,5 +1,8 @@
 <h2>Reviews</h2>
 <div class="table" *ngIf="reviews.length">
+  
+    <button (click)="createReview()" [routerLink]="['/reviews', reviews.length+1]">Create Review</button>
+
     <table class="table table-condensed">
       <thead>
           <tr>
@@ -15,7 +18,7 @@
           <tr
             *ngFor="let review of reviews"
             [class.active]="selectedReview === review">
-              <td>{{ review.id}}</td>
+              <td>{{ review.id }}</td>
               <td>{{ review.reviewTitle }}</td>
 
             <!-- booktitle-->

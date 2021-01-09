@@ -1,10 +1,15 @@
-<div *ngIf="review">
+<div *ngIf="review.reviewTitle.length">
     <h2>{{review.reviewTitle | uppercase}} Details</h2>
-    <div><span>ID: </span>{{review.id}}</div>
+    <div><span class="id">ID: </span>{{review.id}}</div>
     <div>
-      <label>Review:
+      <label><span>Reviewtitle: </span>
+        <input [(ngModel)]="review.reviewTitle" placeholder="Enter your Reviewtitle here!"/>
+      </label>
+    <div>
+      <label><span>Review: </span>
         <input [(ngModel)]="review.text" placeholder="Enter your Review here!"/>
       </label>
     </div>
     <button (click)="goBack()">back to overview</button>
+    <button (click)="save()">save Review</button>
   </div>

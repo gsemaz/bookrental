@@ -27,6 +27,10 @@ export class ReviewComponent implements OnInit {
     this.reviewService.getReviews().subscribe(reviews => this.reviews = reviews);
   }
 
+  createReview(): void {
+    this.reviewService.createReview();
+  }
+
 
   // edit(): boolean
   // {

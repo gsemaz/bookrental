@@ -6,7 +6,7 @@ import { ReviewComponent } from './review/review.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' },
-  { path: 'boooks', component: BookSearchComponent },
+  { path: 'books', component: BookSearchComponent },
   { path: 'reviews/:id', component: ReviewDetailsComponent },
   { path: 'reviews', component: ReviewComponent }
 ];

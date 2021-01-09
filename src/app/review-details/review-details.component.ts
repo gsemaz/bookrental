@@ -21,11 +21,17 @@ export class ReviewDetailsComponent implements OnInit {
 
   getReview(): void {
     const id = +this.route.snapshot.paramMap.get('id');
+    
     this.reviewService.getReview(id).subscribe(review => this.review = review);
   }
 
+
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.reviewService.update(this.review).subscribe(() => this.goBack());
   }
 
 }
