@@ -2,7 +2,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { Book } from '../entities/book';
+import { Book } from '../../entities/book';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  find(author: string, title: string): Observable<Book[]> {
+  find(author: string, title: string, loan: boolean): Observable<Book[]> {
     const url = 'http://localhost:3000/books';
     let params;
 

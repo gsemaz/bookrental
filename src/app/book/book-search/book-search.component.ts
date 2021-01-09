@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BookService } from './book.service';
-import { Book } from '../entities/book';
+import { Book } from '../../entities/book';
 
 
 @Component({
@@ -12,6 +12,7 @@ import { Book } from '../entities/book';
 export class BookSearchComponent implements OnInit {
   title = '';
   author = '';
+  loan = false;
   books: Book[] = [];
   selectedBook: Book;
 
@@ -21,7 +22,7 @@ export class BookSearchComponent implements OnInit {
 
   search(): void {
     this.bookService
-      .find(this.author, this.title)
+      .find(this.author, this.title, this.loan)
       .subscribe(
         books => this.books = books
       );
@@ -31,5 +32,10 @@ export class BookSearchComponent implements OnInit {
     this.selectedBook = book;
     this.title = book.title;
     this.author = book.author;
+    // TODO: add loan property?
+  }
+
+  detail(book: Book): void {
+    
   }
 }
