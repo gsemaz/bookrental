@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BookService } from './book.service';
 import { Book } from '../../entities/book';
 
@@ -13,8 +13,11 @@ export class BookSearchComponent implements OnInit {
   title = '';
   author = '';
   loan = false;
-  books: Book[] = [];
-  selectedBook: Book;
+  // @Input() books: Book[];
+  books : Array<Book>;
+  @Output() booksFetched = new EventEmitter<Book[]>();
+  @Input() display: boolean;
+  @Output() displayChange = new EventEmitter<boolean>();
 
   constructor(private bookService: BookService) { }
 
@@ -22,20 +25,15 @@ export class BookSearchComponent implements OnInit {
 
   search(): void {
     this.bookService
-      .find(this.author, this.title, this.loan)
+      .find(this.author, this.title)
       .subscribe(
-        books => this.books = books
+        books => {
+          alert("Servus");
+          this.books = books;
+          //this.booksFetched.emit();
+          this.display = false;
+          this.displayChange.emit(true);
+        }
       );
-  }
-  
-  select(book: Book): void {
-    this.selectedBook = book;
-    this.title = book.title;
-    this.author = book.author;
-    // TODO: add loan property?
-  }
-
-  detail(book: Book): void {
-    
   }
 }

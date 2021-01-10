@@ -11,7 +11,7 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  find(author: string, title: string, loan: boolean): Observable<Book[]> {
+  find(author: string, title: string): Observable<Book[]> {
     const url = 'http://localhost:3000/books';
     let params;
 
