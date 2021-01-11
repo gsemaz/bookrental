@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Book } from '../../entities/book';
 
@@ -9,8 +8,9 @@ import { Book } from '../../entities/book';
 })
 export class BookCardComponent implements OnInit {
   @Input() item: Book;
-  @Input() selected: boolean;
-  @Output() selectedChange = new EventEmitter();
+  @Output('onBookSelected') selectedChange = new EventEmitter();
+
+  selected: boolean;
 
   constructor() { }
 
@@ -19,6 +19,6 @@ export class BookCardComponent implements OnInit {
 
   toggleSelection(): void {
     this.selected = !this.selected;
-    this.selectedChange.emit(this.selected);
+    this.selectedChange.emit(this.item);
   }
 }

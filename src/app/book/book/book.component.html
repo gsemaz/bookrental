@@ -1,0 +1,12 @@
+<div class="header">
+    <h2 class="title">Book</h2>
+</div>
+<hr>
+<nav>
+    <button [className]="displayDashboard ? 'btn btn-primary' : 'btn btn-default'" (click)="showDashboard()">Dasboard</button>
+    <button [className]="displayList ? 'btn btn-primary' : 'btn btn-default'" (click)="showList()">List</button>
+</nav>
+<hr>
+<div>
+    <router-outlet></router-outlet>
+</div>

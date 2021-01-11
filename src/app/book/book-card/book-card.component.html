@@ -1,7 +1,4 @@
-<div
-    class="card"
-    [ngStyle]="{'background-color': (selected) ? 'rgb(204, 197, 185)' : 'white' }">
-
+<div class="card book-card">
     <div class="header">
         <h2 class="title">{{item.title}}</h2>
         <h4>
@@ -18,10 +15,6 @@
           <ng-content></ng-content>
         </p>
         <p>
-            <button
-                class="btn btn-default"
-                (click)="toggleSelection()">{{ selected ? 'Remove' : 'Select'}}
-            </button>
             <button
                 class="btn btn-default"
                 (click)="toggleSelection()">

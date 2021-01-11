@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book } from 'src/app/entities/book';
+import { BookService } from 'src/app/shared/services/book.service';
 
 @Component({
   selector: 'app-book-dashboard',
@@ -7,21 +9,43 @@ import { Book } from 'src/app/entities/book';
   styleUrls: ['./book-dashboard.component.css']
 })
 export class BookDashboardComponent implements OnInit {
+  title = '';
+  author = '';
+  books: Book[];
+  selectedBook: Book;
   
-  @Input() books: Book[];
+  btnSelected: String;
 
-  @Input() selectedBook: Book;
-  @Output() selectedBookChanged: Book;
-  
-  constructor() {}
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
-    this.selectedBook = null;
-    this.test();
+    this.books = [];
+    this.fetchBooks('', '');
   }
 
-  test(): void {
-    this.selectedBook = { "id": 1, "title": "title1", "author": "author1", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" };
-    this.selectedBookChanged = this.selectedBook;
+  search(): void {
+    this.fetchBooks(this.author, this.title);
   }
+
+  fetchBooks(author: string, title: string): void {
+    this.bookService
+      .find(author, title)
+      .subscribe(
+        books => this.books = books
+      );
+  }
+
+  filterChanged(): void {
+    if (!this.author && !this.title)
+      this.fetchBooks('', '');
+  }
+
+  bookSelected(selection: Book): void {
+    let idSelected = -1;
+    if (selection)
+      idSelected = selection.id;
+
+    this.router.navigate(['/book/edit'], { queryParams: { id: idSelected }});
+  }
+
 }

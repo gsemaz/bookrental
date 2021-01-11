@@ -8,27 +8,21 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ReviewComponent } from './review/review.component';
 import { ReviewDetailsComponent } from './review-details/review-details.component';
-import { BookMainComponent } from './book/book-main/book-main.component';
-import { BookListComponent } from './book/book-list/book-list.component';
-import { BookDashboardComponent } from './book/book-dashboard/book-dashboard.component';
-import { BookEditComponent } from './book/book-edit/book-edit.component';
+import { BookModule } from './book/book.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     ReviewComponent,
-    ReviewDetailsComponent,
-    BookMainComponent,
-    BookListComponent,
-    BookDashboardComponent,
-    BookEditComponent
+    ReviewDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BookModule
   ],
   providers: [],
   bootstrap: [

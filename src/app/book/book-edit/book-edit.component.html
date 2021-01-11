@@ -1,6 +1,35 @@
 <div class="card">
     <div class="header">
-        <h2 class="title">CRUD</h2>
-        <h3>{{book?.author}}</h3>
+        <h2 *ngIf="!displayAddForm" class="title">Edit</h2>
+        <h2 *ngIf="displayAddForm" class="title">Add</h2>
+    </div>
+
+    <div class="content">
+        <form [formGroup]="form">
+            <h3 *ngIf="!displayAddForm">BOOK ID {{book.id}}</h3>
+            <div class="form-group">
+                <label>Title:</label>
+                <input [(ngModel)]="book.title" formControlName="title" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Author:</label>
+                <input [(ngModel)]="book.author" formControlName="author" name="author" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>UserID:</label>
+                <input [(ngModel)]="book.userID" formControlName="userID" name="userID" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>LoanDate:</label>
+                <input [(ngModel)]="book.loanDate" formControlName="loanDate" name="loanDate" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>ReturnDate:</label>
+                <input [(ngModel)]="book.returnDate" formControlName="returnDate" name="returnDate" class="form-control">
+            </div>
+            <button *ngIf="!displayAddForm" [disabled]="!form.valid" class="btn btn-default" (click)="update(book)">Update</button>
+            <button *ngIf="!displayAddForm" class="btn btn-default" (click)="delete(book)">Delete</button>
+            <button *ngIf="displayAddForm" [disabled]="!form.valid" class="btn btn-default" (click)="add(book)">Add</button>
+        </form>
     </div>
 </div>
