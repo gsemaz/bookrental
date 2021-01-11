@@ -12,9 +12,10 @@ export class BookListComponent implements OnInit {
   title = '';
   author = '';
   books: Book[];
-  selectedBook: Book;
-  
-  btnSelected: String;
+
+
+  // selectedBook: Book;
+  // btnSelected: String;
 
   constructor(private bookService: BookService, private router: Router) { }
 
@@ -27,17 +28,17 @@ export class BookListComponent implements OnInit {
     this.fetchBooks(this.author, this.title);
   }
 
+  filterChanged(): void {
+    if (!this.author && !this.title)
+      this.fetchBooks('', '');
+  }
+
   fetchBooks(author: string, title: string): void {
     this.bookService
       .find(author, title)
       .subscribe(
         books => this.books = books
       );
-  }
-
-  filterChanged(): void {
-    if (!this.author && !this.title)
-      this.fetchBooks('', '');
   }
 
   bookSelected(selection: Book): void {

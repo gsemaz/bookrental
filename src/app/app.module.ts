@@ -18,6 +18,8 @@ import { BookModule } from './book/book.module';
     ReviewDetailsComponent
   ],
   imports: [
+    // TODO: Remove FormsModule, AppRoutingModule (just everything that isn't directly used anymore) when subrouting is ready for every entity.
+    // Import those modules in the new module (like in book.module.ts). Import that module (will be called ReviewModule, UserModule) here then :)
     BrowserModule,
     HttpClientModule,
     FormsModule,

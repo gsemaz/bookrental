@@ -8,18 +8,12 @@
 
     <div class="content">
         <p>Author: {{item.author}}</p>
-        <p>ID: {{item.id}}</p>
+        <p>Book ID: {{item.id}}</p>
+        <p>User ID: {{item.userID}}</p>
         <p>Loan Date: {{item.loanDate}}</p>
         <p>Return Date: {{item.returnDate}}</p>
         <p>
-          <ng-content></ng-content>
-        </p>
-        <p>
-            <button
-                class="btn btn-default"
-                (click)="toggleSelection()">
-                Edit
-            </button>
+            <button class="btn btn-default" (click)="toggleSelection()">Edit</button>
         </p>
   </div>
 </div>

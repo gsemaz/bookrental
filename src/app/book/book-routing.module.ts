@@ -11,18 +11,9 @@ const routes: Routes = [
         path: 'book',
         component: BookComponent,
         children: [
-            {
-                path: 'list',
-                component: BookListComponent
-            },
-            {
-                path: 'dashboard',
-                component: BookDashboardComponent
-            },
-            {
-                path: 'edit',
-                component: BookEditComponent
-            }
+            { path: 'list', component: BookListComponent },
+            { path: 'dashboard', component: BookDashboardComponent },
+            { path: 'edit', component: BookEditComponent }
         ]
     }
 ];

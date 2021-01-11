@@ -35,5 +35,4 @@ export class BookComponent implements OnInit {
     this.displayList = true;
     this.displayDashboard = false;
   }
-
 }

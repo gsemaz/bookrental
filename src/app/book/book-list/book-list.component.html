@@ -41,21 +41,15 @@
               </tr>
           </thead>
           <tbody>
-              <tr
-                *ngFor="let book of books"
-                [class.active]="selectedBook === book">
-                  <td>{{ book.id}}</td>
-                  <td>{{ book.title }}</td>
-                  <td> {{ book.author }} </td>
-                  <td> {{book.userID }} </td>
-                  <td> {{book.loanDate | date }} </td>
-                  <td> {{book.returnDate | date }} </td>
+              <tr *ngFor="let book of books">
+                  <td>{{book.id}}</td>
+                  <td>{{book.title}}</td>
+                  <td>{{book.author}}</td>
+                  <td>{{book.userID}}</td>
+                  <td>{{book.loanDate | date }}</td>
+                  <td>{{book.returnDate | date }}</td>
                   <td>
-                      <a
-                        (click)="bookSelected(book)"
-                        style="cursor: pointer;">
-                        Select
-                      </a>
+                      <a (click)="bookSelected(book)" style="cursor: pointer;">Edit</a>
                   </td>
               </tr>
           </tbody>

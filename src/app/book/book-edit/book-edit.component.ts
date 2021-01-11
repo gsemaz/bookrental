@@ -30,12 +30,6 @@ export class BookEditComponent implements OnInit {
     });
   }
 
-  showAddForm(): void {
-    this.displayAddForm = true;
-    this.book = { "id": -1, "title": "", "author": "", "userID": 0, "loanDate": "", "returnDate": "" };
-    this.getNextId();
-  }
-
   fetchQueryParams(): void {
     combineLatest( [this.activatedRoute.paramMap, this.activatedRoute.queryParamMap] )
     .subscribe( ([pathParams, queryParams]) => {
@@ -45,6 +39,12 @@ export class BookEditComponent implements OnInit {
       else
         this.fetchBook(this.selectedId);
     })
+  }
+
+  showAddForm(): void {
+    this.displayAddForm = true;
+    this.book = { "id": -1, "title": "", "author": "", "userID": 0, "loanDate": "", "returnDate": "" };
+    this.getNextId();
   }
 
   fetchBook(id: string): void {
@@ -94,5 +94,4 @@ export class BookEditComponent implements OnInit {
         }
     );
   }
-
 }

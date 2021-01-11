@@ -10,15 +10,12 @@ export class BookCardComponent implements OnInit {
   @Input() item: Book;
   @Output('onBookSelected') selectedChange = new EventEmitter();
 
-  selected: boolean;
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
   toggleSelection(): void {
-    this.selected = !this.selected;
     this.selectedChange.emit(this.item);
   }
 }

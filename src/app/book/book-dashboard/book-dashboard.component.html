@@ -8,6 +8,7 @@
     <div class="header">
         <h3 class="title">Search</h3>
     </div>
+
     <!-- Search content -->
     <div class="content">
         <form>
@@ -20,8 +21,8 @@
                 <input [(ngModel)]="author" name="author" class="form-control" (input)="filterChanged()">
             </div>
             <div class="form-group">
-                <button class="btn btn-default" [disabled]="!author && !title" (click)="search()">Search</button>
-                <button class="btn btn-default" (click)="bookSelected(null)">Add</button>
+                <button class="btn btn-default button" [disabled]="!author && !title" (click)="search()">Search</button>
+                <button class="btn btn-default button" (click)="bookSelected(null)">Add</button>
             </div>
         </form>
     </div>

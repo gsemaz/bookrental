@@ -9,8 +9,6 @@ import { BookRoutingModule } from './book-routing.module';
 import { BookCardComponent } from './book-card/book-card.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 
-
-
 @NgModule({
   declarations: [BookComponent, BookListComponent, BookDashboardComponent, BookCardComponent, BookEditComponent],
   imports: [
