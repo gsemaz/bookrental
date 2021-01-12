@@ -20,14 +20,16 @@
                 <input [(ngModel)]="author" name="author" class="form-control" (input)="filterChanged()">
             </div>
             <div class="form-group">
-                <button class="btn btn-default" [disabled]="!author && !title" (click)="search()">Search</button>
-                <button class="btn btn-default" (click)="bookSelected(null)">Add</button>
+                <button class="btn btn-default button" [disabled]="!author && !title" (click)="search()">Search</button>
+                <button class="btn btn-default button" (click)="bookSelected(null)">Add</button>
+                <button class="btn btn-default button" (click)="openPDF()">Open PDF</button>
+                <button class="btn btn-default button" (click)="downloadPDF()">Download PDF</button>
             </div>
         </form>
     </div>
 
     <!-- List view -->
-    <div *ngIf="books.length">
+    <div *ngIf="books.length" id="htmlData" #htmlData>
         <table class="table table-condensed">
           <thead>
               <tr>
@@ -37,7 +39,7 @@
                   <th>User ID</th>
                   <th>Loan Date</th>
                   <th>Return Date</th>
-                  <th></th>
+                  <th>Action</th>
               </tr>
           </thead>
           <tbody>
@@ -46,8 +48,8 @@
                   <td>{{book.title}}</td>
                   <td>{{book.author}}</td>
                   <td>{{book.userID}}</td>
-                  <td>{{book.loanDate | date }}</td>
-                  <td>{{book.returnDate | date }}</td>
+                  <td>{{book.loanDate}}</td>
+                  <td>{{book.returnDate}}</td>
                   <td>
                       <a (click)="bookSelected(book)" style="cursor: pointer;">Edit</a>
                   </td>

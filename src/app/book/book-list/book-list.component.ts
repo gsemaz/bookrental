@@ -1,7 +1,10 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/entities/book';
 import { BookService } from 'src/app/shared/services/book.service';
+
+import * as jsPDF from 'jspdf';
+
 
 @Component({
   selector: 'app-book-list',
@@ -13,9 +16,7 @@ export class BookListComponent implements OnInit {
   author = '';
   books: Book[];
 
-
-  // selectedBook: Book;
-  // btnSelected: String;
+  @ViewChild('htmlData') htmlData: ElementRef;
 
   constructor(private bookService: BookService, private router: Router) { }
 
@@ -47,6 +48,32 @@ export class BookListComponent implements OnInit {
       idSelected = selection.id;
 
     this.router.navigate(['/book/edit'], { queryParams: { id: idSelected }});
+  }
+
+
+  // PDF Export
+  public openPDF():void {
+    let DATA = this.htmlData.nativeElement;
+    let doc = new jsPDF('p','pt', 'a4');
+    doc.fromHTML(DATA.innerHTML,15,15);
+    doc.output('dataurlnewwindow');
+  }
+
+  public downloadPDF():void {
+    let DATA = this.htmlData.nativeElement;
+    let doc = new jsPDF('p','pt', 'a4');
+
+    let handleElement = {
+      '#editor':function(element,renderer){
+        return true;
+      }
+    };
+    doc.fromHTML(DATA.innerHTML,15,15,{
+      'width': 200,
+      'elementHandlers': handleElement
+    });
+
+    doc.save('books_exported.pdf');
   }
 
 }
