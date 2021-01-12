@@ -14,15 +14,15 @@ export class CustomerService {
 
     constructor(private http: HttpClient) { }
 
-    find(customerName: string, id: string): Observable<Customer[]> {
+    find(firstname: string, lastname: string): Observable<Customer[]> {
         let params: any;
 
-        if (customerName.length != 0 && id.length != 0) {
-            params = new HttpParams().set('customer', customerName).set('id', id);
-        } else if (customerName.length != 0) {
-            params = new HttpParams().set('id', id);
-        } else if (customerName.length != 0) {
-            params = new HttpParams().set('customer', customerName);
+        if (firstname.length != 0 && lastname.length != 0) {
+            params = new HttpParams().set('firstname', firstname).set('lastname', lastname);
+        } else if (firstname.length != 0) {
+            params = new HttpParams().set('firstname', firstname);
+        } else if (lastname.length != 0) {
+            params = new HttpParams().set('lastname', lastname);
         }
 
         const headers = new HttpHeaders().set('Accept', 'application/json');

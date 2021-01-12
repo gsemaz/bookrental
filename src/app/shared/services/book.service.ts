@@ -46,6 +46,16 @@ export class BookService {
         );
     }
 
+    getByCustomerId(id: string): Observable<Book[]> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+        let params = new HttpParams().set('userID', id);
+
+        return this.http.get<Book[]>(this.BASE_URL, { params, headers })
+        .pipe(
+            tap(books => console.log('data access by book service', books))
+        );
+    }
+
     updateById(book: Book): Observable<Book> {
         const headers = new HttpHeaders().set('Accept', 'application/json');
 
