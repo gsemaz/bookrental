@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ReviewComponent } from './review/review.component';
 import { ReviewDetailsComponent } from './review-details/review-details.component';
 import { BookModule } from './book/book.module';
+import { CustomerModule } from './customers/customer.module';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { BookModule } from './book/book.module';
   ],
   imports: [
     // TODO: Remove FormsModule, AppRoutingModule (just everything that isn't directly used anymore) when subrouting is ready for every entity.
-    // Import those modules in the new module (like in book.module.ts). Import that module (will be called ReviewModule, UserModule) here then :)
+    // Import those modules in the new module (like in book.module.ts). Import that module (will be called ReviewModule, CustomerModule) here then :)
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    BookModule
+    BookModule,
+    CustomerModule
   ],
   providers: [],
   bootstrap: [

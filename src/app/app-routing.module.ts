@@ -6,8 +6,8 @@ import { ReviewComponent } from './review/review.component';
 const routes: Routes = [
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // TODO: redirect to '/login' on first launch?
   { path: 'reviews/:id', component: ReviewDetailsComponent },
-  { path: 'reviews', component: ReviewComponent },
-];
+  { path: 'reviews', component: ReviewComponent }
+  ];
 
 @NgModule({
   imports: [
