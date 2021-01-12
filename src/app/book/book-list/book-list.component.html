@@ -39,7 +39,9 @@
                   <th>User ID</th>
                   <th>Loan Date</th>
                   <th>Return Date</th>
-                  <th>Action</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
               </tr>
           </thead>
           <tbody>
@@ -52,6 +54,12 @@
                   <td>{{book.returnDate}}</td>
                   <td>
                       <a (click)="bookSelected(book)" style="cursor: pointer;">Edit</a>
+                  </td>
+                  <td>
+                      <a (click)="showReviews(book)" stlye="cursor: pointer;">Show Reviews</a>
+                  </td>
+                  <td>
+                      <a (click)="addReview(book)" stlye="cursor: pointer;">Add Review</a>
                   </td>
               </tr>
           </tbody>
