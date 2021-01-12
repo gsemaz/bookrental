@@ -9,7 +9,7 @@
     { "id": 7, "title": "title7", "author": "author4", "userID": 0, "loanDate": "", "returnDate": "" },
     { "id": 8, "title": "title8", "author": "author5", "userID": 0, "loanDate": "", "returnDate": "" }
   ],
-  "users": [
+  "customers": [
     { "id": 1, "firstname": "firstname1", "lastname": "lastname1" },
     { "id": 2, "firstname": "firstname2", "lastname": "lastname2" }
   ],
