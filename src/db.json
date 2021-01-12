@@ -10,8 +10,14 @@
     { "id": 8, "title": "title8", "author": "author5", "userID": 0, "loanDate": "", "returnDate": "" }
   ],
   "customers": [
-    { "id": 1, "firstname": "firstname1", "lastname": "lastname1" },
-    { "id": 2, "firstname": "firstname2", "lastname": "lastname2" }
+    { "id": 1, "firstname": "firstname1", "lastname": "lastname1", "books": [
+      { "id": 4, "title": "title4", "author": "author2", "userID": 2, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+      { "id": 7, "title": "title7", "author": "author4", "userID": 0, "loanDate": "", "returnDate": "" }
+    ]},
+    { "id": 2, "firstname": "firstname2", "lastname": "lastname2", "books": [
+      { "id": 1, "title": "title1", "author": "author1", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" },
+      { "id": 2, "title": "title2", "author": "author1", "userID": 1, "loanDate": "01.01.2020", "returnDate": "03.03.2020" }
+    ]}
   ],
   "reviews": [
     { "id": 1, "bookID": 1, "userID": 1, "text": "text1", "reviewTitle": "Best book!", "date": "01.01.2020" },
