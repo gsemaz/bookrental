@@ -21,11 +21,11 @@
             </div>
             <div class="form-group">
                 <label>LoanDate:</label>
-                <input [(ngModel)]="book.loanDate" formControlName="loanDate" name="loanDate" class="form-control">
+                <input [(ngModel)]="book.loanDate" name="loanDate" class="form-control" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
                 <label>ReturnDate:</label>
-                <input [(ngModel)]="book.returnDate" formControlName="returnDate" name="returnDate" class="form-control">
+                <input [(ngModel)]="book.returnDate" name="returnDate" class="form-control" [ngModelOptions]="{standalone: true}">
             </div>
             <button *ngIf="!displayAddForm" [disabled]="!form.valid" class="btn btn-default" (click)="update(book)">Update</button>
             <button *ngIf="!displayAddForm" class="btn btn-default" (click)="delete(book)">Delete</button>

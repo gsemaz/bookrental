@@ -24,9 +24,9 @@ export class BookEditComponent implements OnInit {
     this.form = this.fb.group({
       'author': ['', [Validators.minLength(1), Validators.required]],
       'title': ['', [Validators.minLength(1), Validators.required]],
-      'userID': ['', [Validators.nullValidator, Validators.required]],
-      'loanDate': ['', [Validators.minLength(1), Validators.required]],
-      'returnDate': ['', [Validators.minLength(1), Validators.required]]
+      'userID': ['', [Validators.nullValidator, Validators.required]]
+      // 'loanDate': ['', [Validators.minLength(8), Validators.maxLength(8), Validators.required]],
+      // 'returnDate': ['', [Validators.minLength(8), Validators.maxLength(8), Validators.required]]
     });
   }
 
