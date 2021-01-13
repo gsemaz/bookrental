@@ -67,14 +67,9 @@
   ],
   "customers": [
     {
-      "id": 1,
-      "firstname": "firstname1",
-      "lastname": "lastname1"
-    },
-    {
       "id": 2,
-      "firstname": "firstname2",
-      "lastname": "lastname2"
+      "firstname": "kurt",
+      "lastname": "krypto"
     }
   ],
   "reviews": [
@@ -127,6 +122,14 @@
       "date": "01.01.2020"
     }
   ],
-  "joins": ["1.1.2020", "1.1.2020"],
-  "exits": ["4.4.2020"]
+  "customer_joins": [
+    "01-2020",
+    "01-2020",
+    "03-2020",
+    "06-2020"
+  ],
+  "customer_exits": [
+    "04-2020",
+    "08-2020"
+  ]
 }

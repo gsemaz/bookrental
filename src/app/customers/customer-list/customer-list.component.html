@@ -1,6 +1,6 @@
 <div>
   <h3>Customer List</h3>
-  <button class="btn btn-default">add New</button>
+  <button class="btn btn-default" (click)="editCustomer(null)">Add</button>
 </div>
 
 <div class="header">
@@ -21,10 +21,12 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Books</th>
+      <th scope="col">ID</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +34,8 @@
       <td>{{customer.id}}</td>
       <td>{{customer.firstname}}</td>
       <td>{{customer.lastname}}</td>
+      <td><button class="btn" (click)="editCustomer(customer)">Edit</button></td>
+      <td><button class="btn" (click)="deleteCustomer(customer)">Delete</button></td>
       <td><button class="btn" (click)="showBooksOfCustomer(customer.id)">Show books</button></td>
     </tr>
   </tbody>

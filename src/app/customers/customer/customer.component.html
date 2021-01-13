@@ -1,2 +1,11 @@
-<h1>Customers</h1>
-<router-outlet></router-outlet>
+<div class="header">
+    <h2 class="title">Customers</h2>
+</div>
+<hr>
+<nav>
+    <button [className]="displayList ? 'btn btn-primary' : 'btn btn-default'" (click)="showList()">List</button>
+    <button [className]="displayChart ? 'btn btn-primary' : 'btn btn-default'" (click)="showChart()">Chart</button>
+</nav>
+<div>
+    <router-outlet></router-outlet>
+</div>

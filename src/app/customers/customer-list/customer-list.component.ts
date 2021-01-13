@@ -37,6 +37,22 @@ export class CustomerListComponent implements OnInit {
   }
 
   showBooksOfCustomer(customerId: number): void {
-    this.router.navigate(['/dashboard'], { queryParams: { id: customerId }});
+    // this.router.navigate(['/dashboard'], { queryParams: { id: customerId }});
+  }
+
+  editCustomer(customer: Customer): void {
+    let idSelected = -1;
+    if (customer)
+      idSelected = customer.id;
+
+    this.router.navigate(['/customer/edit'], { queryParams: { id: idSelected }});
+  }
+
+  deleteCustomer(customer: Customer): void {
+    this.customerService
+      .deleteCustomerById(customer)
+      .subscribe(
+        () => this.fetchCustomers('', '')
+      );
   }
 }

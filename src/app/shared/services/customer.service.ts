@@ -10,7 +10,9 @@ import { Customer } from '../../entities/customer';
 })
 export class CustomerService {
 
-    BASE_URL = 'http://localhost:3000/customers';
+    BASE_URL_CUSTOMER = 'http://localhost:3000/customers';
+    BASE_URL_JOINDATES = 'http://localhost:3000/customer_joins';
+    BASE_URL_EXITDATES = 'http://localhost:3000/customer_exits';
 
     constructor(private http: HttpClient) { }
 
@@ -27,7 +29,7 @@ export class CustomerService {
 
         const headers = new HttpHeaders().set('Accept', 'application/json');
 
-        return this.http.get<Customer[]>(this.BASE_URL, { params, headers })
+        return this.http.get<Customer[]>(this.BASE_URL_CUSTOMER, { params, headers })
         .pipe(
             tap(customer => console.log('data access by customer service', customer))
         );
@@ -36,9 +38,63 @@ export class CustomerService {
     add(customer: Customer): Observable<Customer> {
         const headers = new HttpHeaders().set('Accept', 'application/json');
 
-        return this.http.post<Customer>(this.BASE_URL, customer, { headers })
+        return this.http.post<Customer>(this.BASE_URL_CUSTOMER, customer, { headers })
         .pipe(
             tap(customer => console.log('data access by customer service', customer))
+        );
+    }
+
+    getJoins(): Observable<String[]> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+
+        return this.http.get<String[]>(this.BASE_URL_JOINDATES, { headers })
+        .pipe(
+            tap(joins => console.log('data access by customer service', joins))
+        );
+    }
+
+    getExits(): Observable<String[]> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+
+        return this.http.get<String[]>(this.BASE_URL_EXITDATES, { headers })
+        .pipe(
+            tap(exits => console.log('data access by customer service', exits))
+        );
+    }
+
+    getCustomerById(id: string): Observable<Customer> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+
+        return this.http.get<Customer>(this.BASE_URL_CUSTOMER + '/' + id, { headers })
+        .pipe(
+            tap(customer => console.log('data access by customer service', customer))
+        );
+    }
+
+    updateCustomerById(customer: Customer): Observable<Customer> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+
+        return this.http.put<Customer>(this.BASE_URL_CUSTOMER + '/' + customer.id, customer, { headers })
+        .pipe(
+            tap(customer => console.log('data access by customer service', customer))
+        );
+    }
+
+    addCustomer(customer: Customer): Observable<Customer> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+
+        return this.http.post<Customer>(this.BASE_URL_CUSTOMER, customer, { headers })
+        .pipe(
+            tap(customer => console.log('data access by customer service', customer))
+        );
+    }
+
+    deleteCustomerById(customer: Customer): Observable<any> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+
+        return this.http.delete<any>(this.BASE_URL_CUSTOMER + '/' + customer.id, { headers })
+        .pipe(
+            tap(customer => console.log('data access by book service', customer))
         );
     }
 
