@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Customer } from 'src/app/entities/customer';
-import { BookService } from 'src/app/shared/services/book.service';
 import { CustomerService } from 'src/app/shared/services/customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -12,7 +12,7 @@ import { CustomerService } from 'src/app/shared/services/customer.service';
 export class CustomerListComponent implements OnInit {
   lastname = '';
 
-  constructor(private customerService: CustomerService, private bookService: BookService) { }
+  constructor(private customerService: CustomerService, private router: Router) { }
 
   customers: Customer[];
 
@@ -25,23 +25,6 @@ export class CustomerListComponent implements OnInit {
     this.customerService.find(firstname, lastname).subscribe(
       customers => this.customers = customers
     );
-
-    this.customers.forEach(
-      customer => {
-        this.fetchBooksOfCustomer('1');
-      }
-    )
-  }
-
-  getCustomerOfId(id: string): Customer {
-    return this.customers.filter(customer => customer.id == parseInt(id, 10))[0];
-    
-  }
-
-  fetchBooksOfCustomer(id: string): void {
-    this.bookService.getByCustomerId(id).subscribe(
-      books => this.getCustomerOfId(id).books = books
-    )
   }
 
   search(): void {
@@ -51,5 +34,9 @@ export class CustomerListComponent implements OnInit {
   filterChanged(): void {
     if (!this.lastname)
       this.fetchCustomers('', '');
+  }
+
+  showBooksOfCustomer(customerId: number): void {
+    this.router.navigate(['/dashboard'], { queryParams: { id: customerId }});
   }
 }

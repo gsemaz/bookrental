@@ -32,11 +32,7 @@
       <td>{{customer.id}}</td>
       <td>{{customer.firstname}}</td>
       <td>{{customer.lastname}}</td>
-      <td>
-        <ul *ngFor="let book of customer.books">
-          <li>{{book.id}} - {{book.title}}</li>
-        </ul>
-      </td>
+      <td><button class="btn" (click)="showBooksOfCustomer(customer.id)">Show books</button></td>
     </tr>
   </tbody>
 </table>
