@@ -97,42 +97,4 @@ export class CustomerService {
             tap(customer => console.log('data access by book service', customer))
         );
     }
-
-/*
-    getById(id: string): Observable<Customer> {
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-        return this.http.get<Book>(this.BASE_URL + '/' + id, { headers })
-        .pipe(
-            tap(customer => console.log('data access by customer service', customer))
-        );
-    }
-
-    updateById(book: Book): Observable<Book> {
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-
-        return this.http.put<Book>(this.BASE_URL + '/' + book.id, book, { headers })
-        .pipe(
-            tap(book => console.log('data access by book service', book))
-        );
-    }
-
-    deleteById(book: Book): Observable<any> {
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-
-        return this.http.delete<any>(this.BASE_URL + '/' + book.id, { headers })
-        .pipe(
-            tap(book => console.log('data access by book service', book))
-        );
-    }
-
-    add(book: Book): Observable<Book> {
-        const headers = new HttpHeaders().set('Accept', 'application/json');
-
-        return this.http.post<Book>(this.BASE_URL, book, { headers })
-        .pipe(
-            tap(book => console.log('data access by book service', book))
-        );
-    }
-
-    */
 }

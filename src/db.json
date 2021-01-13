@@ -65,13 +65,7 @@
       "returnDate": ""
     }
   ],
-  "customers": [
-    {
-      "id": 2,
-      "firstname": "kurt",
-      "lastname": "krypto"
-    }
-  ],
+  "customers": [],
   "reviews": [
     {
       "id": 1,
