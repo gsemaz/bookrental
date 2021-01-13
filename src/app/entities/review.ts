@@ -5,4 +5,5 @@ export interface Review {
   text: string;
   reviewTitle: string;
   date: string; // ISO Date String
+  stars: number;
 }

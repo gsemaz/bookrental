@@ -6,17 +6,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { ReviewComponent } from './review/review.component';
-import { ReviewDetailsComponent } from './review-details/review-details.component';
 import { BookModule } from './book/book.module';
 import { CustomerModule } from './customers/customer.module';
+import { ReviewModule } from './review/review.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    ReviewComponent,
-    ReviewDetailsComponent
   ],
   imports: [
     // TODO: Remove FormsModule, AppRoutingModule (just everything that isn't directly used anymore) when subrouting is ready for every entity.
@@ -26,7 +23,8 @@ import { CustomerModule } from './customers/customer.module';
     FormsModule,
     AppRoutingModule,
     BookModule,
-    CustomerModule
+    CustomerModule,
+    ReviewModule
   ],
   providers: [],
   bootstrap: [

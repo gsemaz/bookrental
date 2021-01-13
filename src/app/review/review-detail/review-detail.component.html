@@ -1,0 +1,14 @@
+<div class="card book-card">
+    <div class="content">
+        <p>ID: {{review.id}}</p>
+        <p>Book ID: {{review.bookID}}</p>
+        <p>Reviewtitle: {{review.reviewTitle}}</p>
+        <p>Text: {{review.text}}</p>
+        <p>Stars: {{review.stars}}</p>
+        <p>Date: {{review.date}}</p>
+        <p>
+            <button class="btn btn-default" (click)="toggleSelect()">Select</button>
+            <button class="btn btn-default" (click)="toggleEdit()">Edit</button>
+        </p>
+  </div>
+</div>

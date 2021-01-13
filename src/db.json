@@ -65,39 +65,22 @@
       "returnDate": ""
     }
   ],
-  "customers": [],
-  "reviews": [
+  "customers": [
     {
       "id": 1,
-      "bookID": 1,
-      "userID": 1,
-      "text": "text1",
-      "reviewTitle": "Best book!",
-      "date": "01.01.2020"
-    },
-    {
-      "id": 2,
-      "bookID": 1,
-      "userID": 1,
-      "text": "text2",
-      "reviewTitle": "Best book!",
-      "date": "01.01.2020"
-    },
-    {
-      "id": 3,
-      "bookID": 2,
-      "userID": 1,
-      "text": "text3",
-      "reviewTitle": "Best book!",
-      "date": "01.01.2020"
-    },
+      "firstname": "asdf",
+      "lastname": "asdf"
+    }
+  ],
+  "reviews": [
     {
       "id": 4,
       "bookID": 2,
       "userID": 2,
       "text": "text4",
       "reviewTitle": "Best book!",
-      "date": "01.01.2020"
+      "date": "01.01.2020",
+      "stars": 1
     },
     {
       "id": 5,
@@ -105,7 +88,8 @@
       "userID": 2,
       "text": "text5",
       "reviewTitle": "Best book!",
-      "date": "01.01.2020"
+      "date": "01.01.2020",
+      "stars": 5
     },
     {
       "id": 6,
@@ -113,7 +97,26 @@
       "userID": 2,
       "text": "text6",
       "reviewTitle": "Best book!",
-      "date": "01.01.2020"
+      "date": "01.01.2020",
+      "stars": 3
+    },
+    {
+      "id": 7,
+      "bookID": "1",
+      "userID": "1",
+      "text": "asdf",
+      "reviewTitle": "asdfaaaaaa",
+      "date": "aaaaaaaa",
+      "stars": "1"
+    },
+    {
+      "id": 8,
+      "bookID": "89",
+      "userID": "23",
+      "text": "asdf",
+      "reviewTitle": "asdfasdfasdfasdf",
+      "date": "asdfasdfasdfasdfasdf",
+      "stars": "1"
     }
   ],
   "customer_joins": [

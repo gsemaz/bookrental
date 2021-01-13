@@ -1,0 +1,39 @@
+<div class="card">
+    <div class="header">
+        <h2 *ngIf="!isAdd" class="title">Edit</h2>
+        <h2 *ngIf="isAdd" class="title">Add</h2>
+    </div>
+
+    <div class="content">
+        <form [formGroup]="form">
+            <h3 *ngIf="!isAdd">Review ID {{review.id}}</h3>
+            <div class="form-group">
+                <label>Book ID:</label>
+                <input [(ngModel)]="review.bookID" class="form-control" formControlName="bookID" name="bookID">
+            </div>
+            <div class="form-group">
+                <label>User ID:</label>
+                <input [(ngModel)]="review.userID" class="form-control" formControlName="userID" name="userID">
+            </div>
+            <div class="form-group">
+                <label>Reviewtitle:</label>
+                <input [(ngModel)]="review.reviewTitle" class="form-control" formControlName="reviewTitle" name="reviewTitle">
+            </div>
+            <div class="form-group">
+                <label>Text:</label>
+                <input [(ngModel)]="review.text" class="form-control" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label>Date:</label>
+                <input [(ngModel)]="review.date" name="date" class="form-control" formControlName="date" name="date">
+            </div>
+            <div class="form-group">
+                <label>Stars:</label>
+                <input [(ngModel)]="review.stars" name="stars" class="form-control" formControlName="stars" name="stars">
+            </div>
+            <button *ngIf="!isAdd" [disabled]="!form.valid" class="btn btn-default" (click)="updateReview(review)">Update</button>
+            <button *ngIf="!isAdd" class="btn btn-default" (click)="deleteReview(review)">Delete</button>
+            <button *ngIf="isAdd" [disabled]="!form.valid" class="btn btn-default" (click)="addReview(review)">Add</button>
+        </form>
+    </div>
+</div>

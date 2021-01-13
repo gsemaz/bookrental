@@ -1,0 +1,12 @@
+<div class="header">
+    <h2 class="title">Review</h2>
+</div>
+<hr>
+<nav>
+    <button [className]="displayList ? 'btn btn-primary' : 'btn btn-default'" (click)="showList()">List</button>
+    <button [className]="displayForm ? 'btn btn-primary' : 'btn btn-default'" (click)="showForm()">Form</button>
+</nav>
+<hr>
+<div>
+    <router-outlet></router-outlet>
+</div>
