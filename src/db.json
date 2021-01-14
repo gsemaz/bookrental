@@ -94,7 +94,7 @@
         "author": "Author 5",
         "userID": 4,
         "loanDate": "01.05.2020",
-        "returnDate": "10.05.2020"
+        "returnDate": ""
     },
     {
         "id": 13,
@@ -108,49 +108,49 @@
         "id": 14,
         "title": "Title 14",
         "author": "Author 5",
-        "userID": 2,
-        "loanDate": "09.11.2020",
-        "returnDate": "15.11.2020"
+        "userID": null,
+        "loanDate": "",
+        "returnDate": ""
     },
     {
         "id": 15,
         "title": "Title 15",
         "author": "Author 6",
-        "userID": 6,
-        "loanDate": "09.07.2020",
-        "returnDate": "09.08.2020"
+        "userID": null,
+        "loanDate": "",
+        "returnDate": ""
     },
     {
         "id": 16,
         "title": "Title 16",
         "author": "Author 6",
-        "userID": 4,
-        "loanDate": "09.07.2020",
-        "returnDate": "09.08.2020"
+        "userID": null,
+        "loanDate": "",
+        "returnDate": ""
     },
     {
         "id": 17,
         "title": "Title 17",
         "author": "Author 7",
-        "userID": 4,
-        "loanDate": "22.04.2019",
-        "returnDate": "09.07.2020"
+        "userID": null,
+        "loanDate": "",
+        "returnDate": ""
     },
     {
         "id": 18,
         "title": "Title 18",
         "author": "Author 8",
-        "userID": 10,
-        "loanDate": "09.07.2019",
-        "returnDate": "09.07.2020"
+        "userID": null,
+        "loanDate": "",
+        "returnDate": ""
     },
     {
         "id": 19,
         "title": "Title 19",
         "author": "Author 9",
-        "userID": 8,
-        "loanDate": "01.01.2021",
-        "returnDate": "09.01.2021"
+        "userID": null,
+        "loanDate": "",
+        "returnDate": ""
     }
   ],
   "customers": [
