@@ -24,7 +24,7 @@ Review Administration (Lisa Zirkl):
   - Detail view
 
 Required Libraries:
-  - json server ("json-server --watch db.json")
+  - json server ("json-server --watch /src/db.json")
   - apexcharts
   - jspdf
 
