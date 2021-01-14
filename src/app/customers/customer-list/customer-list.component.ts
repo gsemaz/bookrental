@@ -56,9 +56,5 @@ export class CustomerListComponent implements OnInit {
       .subscribe(
         () => this.fetchCustomers('', '')
       );
-
-    const date = new Date();
-    const dateString = this.datePipe.transform(date, 'MM-yyyy');
-    this.customerService.addExit(dateString).subscribe();
   }
 }
