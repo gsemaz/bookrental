@@ -32,9 +32,7 @@ export class CustomerChartComponent implements OnInit {
     this.customerService
       .getJoins()
       .subscribe(
-        joinDates => {
-          this.joinDates = joinDates;
-        }
+        joinDates => this.joinDates = joinDates
       );
   }
 
@@ -94,17 +92,16 @@ export class CustomerChartComponent implements OnInit {
 
     let addingFromYearBefore = 0;
     this.chartYears.forEach(chartYear => {
-      console.log("charyear: " + chartYear.year + ' | ' + this.chartYears[0].year)
+      console.log('charyear: ' + chartYear.year + ' | ' + this.chartYears[0].year)
       if (chartYear.year !== this.chartYears[0].year) {
         chartYear.months[0] = chartYear.months[0] + addingFromYearBefore;
       }
       let counter = 0;
       chartYear.months.forEach(month => {
-        if( counter !== 0 )  {
+        if ( counter !== 0 )  {
             chartYear.months[counter] = chartYear.months[counter - 1] + chartYear.months[counter];
-            console.log(chartYear.months[counter] + ' | ' + month);
         }
-          counter ++;
+        counter++;
       });
       addingFromYearBefore = chartYear.months[11];
     });

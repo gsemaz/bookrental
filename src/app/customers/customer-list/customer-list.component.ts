@@ -2,17 +2,19 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { Customer } from 'src/app/entities/customer';
 import { CustomerService } from 'src/app/shared/services/customer.service';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css']
+  styleUrls: ['./customer-list.component.css'],
+  providers: [DatePipe]
 })
 
 export class CustomerListComponent implements OnInit {
   lastname = '';
 
-  constructor(private customerService: CustomerService, private router: Router) { }
+  constructor(private customerService: CustomerService, private router: Router, private datePipe: DatePipe) { }
 
   customers: Customer[];
 
@@ -54,5 +56,9 @@ export class CustomerListComponent implements OnInit {
       .subscribe(
         () => this.fetchCustomers('', '')
       );
+
+    const date = new Date();
+    const dateString = this.datePipe.transform(date, 'MM-yyyy');
+    this.customerService.addExit(dateString).subscribe();
   }
 }

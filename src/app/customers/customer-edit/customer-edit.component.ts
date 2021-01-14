@@ -4,11 +4,13 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { Customer } from 'src/app/entities/customer';
 import { CustomerService } from 'src/app/shared/services/customer.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-customer-edit',
   templateUrl: './customer-edit.component.html',
-  styleUrls: ['./customer-edit.component.css']
+  styleUrls: ['./customer-edit.component.css'],
+  providers: [DatePipe]
 })
 export class CustomerEditComponent implements OnInit {
 
@@ -17,7 +19,7 @@ export class CustomerEditComponent implements OnInit {
   customer: Customer;
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private customerService: CustomerService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private customerService: CustomerService, private router: Router, private activatedRoute: ActivatedRoute, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.customer = { "id": -1, "firstname": "", "lastname": ""};   // dummy init preventing undefined behaviour
@@ -65,8 +67,14 @@ export class CustomerEditComponent implements OnInit {
     this.customerService
       .addCustomer(customer)
       .subscribe(
-        () => this.router.navigateByUrl('/customer/list')
+        () => {
+          this.router.navigateByUrl('/customer/list');
+        }
       );
+
+    const date = new Date();
+    const dateString = this.datePipe.transform(date, 'MM-yyyy');
+    this.customerService.addJoin(dateString).subscribe();
   }
 
   getNextId(): void {

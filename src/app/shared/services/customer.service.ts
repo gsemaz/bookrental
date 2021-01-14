@@ -44,19 +44,34 @@ export class CustomerService {
         );
     }
 
-    getJoins(): Observable<String[]> {
+    addJoin(dateString: string): Observable<string> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+        return this.http.post<string>(this.BASE_URL_JOINDATES, { headers })
+        .pipe(
+            tap(join => console.log('data access by customer service', join))
+        );
+    }
+    addExit(dateString: string): Observable<string> {
+        const headers = new HttpHeaders().set('Accept', 'application/json');
+        return this.http.post<string>(this.BASE_URL_EXITDATES, { headers })
+        .pipe(
+            tap(exit => console.log('data access by customer service', exit))
+        );
+    }
+
+    getJoins(): Observable<string[]> {
         const headers = new HttpHeaders().set('Accept', 'application/json');
 
-        return this.http.get<String[]>(this.BASE_URL_JOINDATES, { headers })
+        return this.http.get<string[]>(this.BASE_URL_JOINDATES, { headers })
         .pipe(
             tap(joins => console.log('data access by customer service', joins))
         );
     }
 
-    getExits(): Observable<String[]> {
+    getExits(): Observable<string[]> {
         const headers = new HttpHeaders().set('Accept', 'application/json');
 
-        return this.http.get<String[]>(this.BASE_URL_EXITDATES, { headers })
+        return this.http.get<string[]>(this.BASE_URL_EXITDATES, { headers })
         .pipe(
             tap(exits => console.log('data access by customer service', exits))
         );
