@@ -1,3 +1,4 @@
-<p>TODO: Sum year here</p>
 
-<app-customer-graph [joinDates]="joinDates" [exitDates]="exitDates"></app-customer-graph>
+
+
+<app-customer-graph (onYearSelected)="changeYear($event)" [monthsForGraph]="monthsForGraph" [yearsForGraph]="yearsForGraph"></app-customer-graph>

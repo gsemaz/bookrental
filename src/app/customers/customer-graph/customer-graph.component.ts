@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import * as ApexCharts from 'apexcharts';
+import {ChartYear} from '../customer-chart/entities/chartyear';
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-customer-graph',
@@ -7,33 +9,50 @@ import * as ApexCharts from 'apexcharts';
   styleUrls: ['./customer-graph.component.css']
 })
 export class CustomerGraphComponent implements OnInit {
-  @Input() joinDates: String[];
-  @Input() exitDates: String[];
-  // TODO: buttons for years, calculate sum, output sum of year to parent 
+  @Input() monthsForGraph: number[];
+  @Input() yearsForGraph: number[];
+  @Output('onYearSelected') yearSelected = new EventEmitter();
+  // TODO: buttons for years, calculate sum, output sum of year to parent
+
+  chart: ApexCharts;
+  currentYear: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.showChart();
   }
 
-  showChart(): void {
-    var options = {
-      chart: {
-        type: 'line'
-      },
-      series: [{
-        name: 'users',
-        data: [30,40,35,50,49,60,70,91,125]
-      }],
-      xaxis: {
-        categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+  updateChart(): void {
+    if( this.chart == null ) {
+      const options = {
+        chart: {
+          type: 'line'
+        },
+        series: [{
+          name: 'users',
+          data: this.monthsForGraph
+        }],
+        xaxis: {
+          categories: [1,2,3,4,5,6,7,8,9,10,11,12]
+        }
       }
+      this.chart = new ApexCharts(document.querySelector("#chart"), options);
+      this.chart.render();
+    } else {
+      this.chart.updateOptions({
+        series: [{
+          data: this.monthsForGraph
+        }]
+      });
     }
-    
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-    
-    chart.render();
+  }
+
+  changeYear(year): void {
+    this.currentYear = year;
+    this.yearSelected.emit(year);
+    setTimeout(_ => {
+      this.updateChart();
+    }, 50);
   }
 
 }

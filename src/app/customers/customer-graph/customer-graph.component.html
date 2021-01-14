@@ -1,1 +1,4 @@
+<div class="mt-2 btn-group" *ngFor="let year of yearsForGraph">
+  <button [className]="year == currentYear ? 'btn btn-primary' : 'btn btn-default'" (click)="changeYear(year)">Show {{year}}</button>
+</div>
 <div id="chart"></div>
