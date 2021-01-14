@@ -68,13 +68,19 @@ export class CustomerEditComponent implements OnInit {
       .addCustomer(customer)
       .subscribe(
         () => {
-          this.router.navigateByUrl('/customer/list');
+          const date = new Date();
+          const dateString = this.datePipe.transform(date, 'MM-yyyy');
+          console.log('servus1');
+          this.customerService.addJoin(dateString).subscribe(
+            () => {
+              console.log('servus2');
+              this.router.navigateByUrl('/customer/list');
+            }
+          );
         }
       );
 
-    const date = new Date();
-    const dateString = this.datePipe.transform(date, 'MM-yyyy');
-    this.customerService.addJoin(dateString).subscribe();
+    
   }
 
   getNextId(): void {

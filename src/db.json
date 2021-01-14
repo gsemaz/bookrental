@@ -1,124 +1,345 @@
 {
   "books": [
     {
-      "id": 2,
-      "title": "title2",
-      "author": "author1",
-      "userID": 1,
-      "loanDate": "01.01.1997",
-      "returnDate": "03.03.1997"
+        "id": 1,
+        "title": "Title 1",
+        "author": "Author 1",
+        "userID": 1,
+        "loanDate": "01.05.2019",
+        "returnDate": "22.07.2019"
     },
     {
-      "id": 3,
-      "title": "title3",
-      "author": "author1",
-      "userID": 2,
-      "loanDate": "15.08.2020",
-      "returnDate": "03.03.2020"
+        "id": 2,
+        "title": "Title 2",
+        "author": "Author 1",
+        "userID": 1,
+        "loanDate": "15.03.2019",
+        "returnDate": "25.03.2019"
     },
     {
-      "id": 4,
-      "title": "title4",
-      "author": "author2",
-      "userID": 2,
-      "loanDate": "01.01.2020",
-      "returnDate": "03.03.2020"
+        "id": 3,
+        "title": "Title 3",
+        "author": "Author 1",
+        "userID": 1,
+        "loanDate": "04.05.2020",
+        "returnDate": "07.05.2020"
     },
     {
-      "id": 5,
-      "title": "title5",
-      "author": "author2",
-      "userID": 0,
-      "loanDate": "",
-      "returnDate": ""
+        "id": 4,
+        "title": "Title 4",
+        "author": "Author 1",
+        "userID": 1,
+        "loanDate": "03.01.2020",
+        "returnDate": "20.03.2020"
     },
     {
-      "id": 6,
-      "title": "title6",
-      "author": "author3",
-      "userID": 0,
-      "loanDate": "",
-      "returnDate": ""
+        "id": 5,
+        "title": "Title 5",
+        "author": "Author 2",
+        "userID": 1,
+        "loanDate": "01.02.2019",
+        "returnDate": ""
     },
     {
-      "id": 7,
-      "title": "title7",
-      "author": "author4",
-      "userID": 0,
-      "loanDate": "",
-      "returnDate": ""
+        "id": 6,
+        "title": "Title 6",
+        "author": "Author 2",
+        "userID": 2,
+        "loanDate": "26.08.2019",
+        "returnDate": "15.10.2019"
     },
     {
-      "id": 8,
-      "title": "title8",
-      "author": "author5",
-      "userID": 0,
-      "loanDate": "",
-      "returnDate": ""
+        "id": 7,
+        "title": "Title 7",
+        "author": "Author 2",
+        "userID": 2,
+        "loanDate": "04.03.2020",
+        "returnDate": "01.05.2020"
+    },
+    {
+        "id": 8,
+        "title": "Title 8",
+        "author": "Author 3",
+        "userID": 2,
+        "loanDate": "08.09.2020",
+        "returnDate": ""
+    },
+    {
+        "id": 9,
+        "title": "Title 9",
+        "author": "Author 3",
+        "userID": 3,
+        "loanDate": "20.01.2019",
+        "returnDate": "04.04.2019"
+    },
+    {
+        "id": 10,
+        "title": "Title 10",
+        "author": "Author 4",
+        "userID": 3,
+        "loanDate": "02.01.2021",
+        "returnDate": "10.01.2021"
+    },
+    {
+        "id": 11,
+        "title": "Title 11",
+        "author": "Author 5",
+        "userID": 3,
+        "loanDate": "02.11.2019",
+        "returnDate": "24.11.2019"
+    },
+    {
+        "id": 12,
+        "title": "Title 12",
+        "author": "Author 5",
+        "userID": 4,
+        "loanDate": "01.05.2020",
+        "returnDate": "10.05.2020"
+    },
+    {
+        "id": 13,
+        "title": "Title 13",
+        "author": "Author 5",
+        "userID": 5,
+        "loanDate": "23.02.2019",
+        "returnDate": "25.02.2019"
+    },
+    {
+        "id": 14,
+        "title": "Title 14",
+        "author": "Author 5",
+        "userID": 2,
+        "loanDate": "09.11.2020",
+        "returnDate": "15.11.2020"
+    },
+    {
+        "id": 15,
+        "title": "Title 15",
+        "author": "Author 6",
+        "userID": 6,
+        "loanDate": "09.07.2020",
+        "returnDate": "09.08.2020"
+    },
+    {
+        "id": 16,
+        "title": "Title 16",
+        "author": "Author 6",
+        "userID": 4,
+        "loanDate": "09.07.2020",
+        "returnDate": "09.08.2020"
+    },
+    {
+        "id": 17,
+        "title": "Title 17",
+        "author": "Author 7",
+        "userID": 4,
+        "loanDate": "22.04.2019",
+        "returnDate": "09.07.2020"
+    },
+    {
+        "id": 18,
+        "title": "Title 18",
+        "author": "Author 8",
+        "userID": 10,
+        "loanDate": "09.07.2019",
+        "returnDate": "09.07.2020"
+    },
+    {
+        "id": 19,
+        "title": "Title 19",
+        "author": "Author 9",
+        "userID": 8,
+        "loanDate": "01.01.2021",
+        "returnDate": "09.01.2021"
     }
   ],
   "customers": [
     {
-      "id": 1,
-      "firstname": "asdf",
-      "lastname": "asdf"
+        "id": 1,
+        "firstname": "Firstname 1",
+        "lastname": "Lastname 1"
+    },
+    {
+        "id": 2,
+        "firstname": "Firstname 2",
+        "lastname": "Lastname 1"
+    },
+    {
+        "id": 3,
+        "firstname": "Firstname 3",
+        "lastname": "Lastname 1"
+    },
+    {
+        "id": 4,
+        "firstname": "Firstname 4",
+        "lastname": "Lastname 4"
+    },
+    {
+        "id": 5,
+        "firstname": "Firstname 5",
+        "lastname": "Lastname 4"
+    },
+    {
+        "id": 6,
+        "firstname": "Firstname 6",
+        "lastname": "Lastname 4"
+    },
+    {
+        "id": 7,
+        "firstname": "Firstname 7",
+        "lastname": "Lastname 7"
+    },
+    {
+        "id": 8,
+        "firstname": "Firstname 8",
+        "lastname": "Lastname 7"
+    },
+    {
+        "id": 9,
+        "firstname": "Firstname 9",
+        "lastname": "Lastname 9"
+    },
+    {
+        "id": 10,
+        "firstname": "Firstname 10",
+        "lastname": "Lastname 10"
+    },
+    {
+        "id": 11,
+        "firstname": "Firstname 11",
+        "lastname": "Lastname 11"
     }
   ],
   "reviews": [
     {
-      "id": 4,
-      "bookID": 2,
-      "userID": 2,
-      "text": "text4",
-      "reviewTitle": "Best book!",
-      "date": "01.01.2020",
-      "stars": 1
+        "id": 1,
+        "bookID": 1,
+        "userID": 1,
+        "text": "Text 1",
+        "reviewTitle": "Title 1",
+        "date": "02.06.2019",
+        "stars": 1
     },
     {
-      "id": 5,
-      "bookID": 2,
-      "userID": 2,
-      "text": "text5",
-      "reviewTitle": "Best book!",
-      "date": "01.01.2020",
-      "stars": 5
+        "id": 2,
+        "bookID": 1,
+        "userID": 2,
+        "text": "Text 2",
+        "reviewTitle": "Title 2",
+        "date": "02.02.2018",
+        "stars": 3
     },
     {
-      "id": 6,
-      "bookID": 2,
-      "userID": 2,
-      "text": "text6",
-      "reviewTitle": "Best book!",
-      "date": "01.01.2020",
-      "stars": 3
+        "id": 3,
+        "bookID": 1,
+        "userID": 3,
+        "text": "Text 3",
+        "reviewTitle": "Title 3",
+        "date": "01.01.2018",
+        "stars": 4
     },
     {
-      "id": 7,
-      "bookID": "1",
-      "userID": "1",
-      "text": "asdf",
-      "reviewTitle": "asdfaaaaaa",
-      "date": "aaaaaaaa",
-      "stars": "1"
+        "id": 4,
+        "bookID": 2,
+        "userID": 1,
+        "text": "Text 4",
+        "reviewTitle": "Title 4",
+        "date": "10.03.2019",
+        "stars": 1
     },
     {
-      "id": 8,
-      "bookID": "89",
-      "userID": "23",
-      "text": "asdf",
-      "reviewTitle": "asdfasdfasdfasdf",
-      "date": "asdfasdfasdfasdfasdf",
-      "stars": "1"
+        "id": 5,
+        "bookID": 2,
+        "userID": 3,
+        "text": "Text 5",
+        "reviewTitle": "Title 5",
+        "date": "24.02.2019",
+        "stars": 5
+    },
+    {
+        "id": 6,
+        "bookID": 3,
+        "userID": 1,
+        "text": "Text 6",
+        "reviewTitle": "Title 6",
+        "date": "07.05.2020",
+        "stars": 5
+    },
+    {
+        "id": 7,
+        "bookID": 4,
+        "userID": 1,
+        "text": "Text 7",
+        "reviewTitle": "Title 7",
+        "date": "20.01.2020",
+        "stars": 5
+    },
+    {
+        "id": 8,
+        "bookID": 6,
+        "userID": 2,
+        "text": "Text 8",
+        "reviewTitle": "Title 8",
+        "date": "10.10.2019",
+        "stars": 1
+    },
+    {
+        "id": 9,
+        "bookID": 7,
+        "userID": 2,
+        "text": "Text 9",
+        "reviewTitle": "Title 9",
+        "date": "01.05.2020",
+        "stars": 2
+    },
+    {
+        "id": 10,
+        "bookID": 9,
+        "userID": 3,
+        "text": "Text 10",
+        "reviewTitle": "Title 10",
+        "date": "04.04.2019",
+        "stars": 3
+    },
+    {
+        "id": 11,
+        "bookID": 10,
+        "userID": 3,
+        "text": "Text 11",
+        "reviewTitle": "Title 11",
+        "date": "10.01.2021",
+        "stars": 3
+    },
+    {
+        "id": 12,
+        "bookID": 11,
+        "userID": 3,
+        "text": "Text 12",
+        "reviewTitle": "Title 12",
+        "date": "24.11.2019",
+        "stars": 5
     }
   ],
   "customer_joins": [
+    "02-2019",
+    "03-2019",
+    "03-2019",
+    "07-2019",
+    "09-2019",
     "01-2020",
-    "01-2020",
-    "03-2020",
-    "06-2020"
+    "02-2020",
+    "08-2020",
+    "08-2020",
+    "09-2020",
+    "11-2020",
+    "09-2020",
+    "01-2021",
+    "01-2021"
+    
   ],
   "customer_exits": [
-    "04-2020",
-    "08-2020"
+    "05-2019",
+    "10-2020",
+    "12-2020"
   ]
 }
