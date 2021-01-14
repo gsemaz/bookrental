@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { combineLatest } from 'rxjs';
 import { Review } from 'src/app/entities/review';
 import { ReviewService } from 'src/app/shared/services/review.service';
 
@@ -13,12 +14,26 @@ export class ReviewListComponent implements OnInit {
   bookID: number;
   stars: number;
   reviews: Review[];
+  queryId: string;
   
-  constructor(private reviewService: ReviewService, private router: Router) { }
+  constructor(private reviewService: ReviewService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.reviews = [];
-    this.fetchReviews(null, null);
+    this.getQueryId();
+  }
+
+  getQueryId(): void {
+    combineLatest( [this.activatedRoute.paramMap, this.activatedRoute.queryParamMap] )
+    .subscribe( ([pathParams, queryParams]) => {
+      this.queryId = queryParams.get('id');
+      if (this.queryId) {
+        this.fetchReviews(+this.queryId, null);
+      }
+      else {
+        this.fetchReviews(null, null);
+      }
+    })
   }
 
   search(): void {

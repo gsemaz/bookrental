@@ -51,23 +51,12 @@ export class BookListComponent implements OnInit {
   }
 
   showReviews(selection: Book): void {
-    // let idSelected = -1;
-    // if (selection)
-    //   idSelected = selection.id;
+    let idSelected = -1;
+    if (selection)
+      idSelected = selection.id;
 
-    // this.router.navigate(['/reviews'], { queryParams: { id: idSelected}});
-    alert("TODO: Show Reviews by BookID");
+    this.router.navigate(['/review/list'], { queryParams: { id: idSelected}});
   }
-
-  addReview(selection: Book): void {
-    // let idSelected = -1;
-    // if (selection)
-    //   idSelected = selection.id;
-
-    // this.router.navigate(['/reviews/add'], { queryParams: { id: idSelected}});
-    alert("TODO: Add Review by BookID")
-  }
-
 
   // PDF Export
   public openPDF():void {
