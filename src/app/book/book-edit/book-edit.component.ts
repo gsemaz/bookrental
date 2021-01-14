@@ -20,6 +20,8 @@ export class BookEditComponent implements OnInit {
   constructor(private fb: FormBuilder, private bookService: BookService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.book = { "id": -1, "title": "", "author": "", "userID": 0, "loanDate": "", "returnDate": "" }; // dummy init preventing undefined behaviour
+
     this.fetchQueryParams();
     this.form = this.fb.group({
       'author': ['', [Validators.minLength(1), Validators.required]],
@@ -43,7 +45,6 @@ export class BookEditComponent implements OnInit {
 
   showAddForm(): void {
     this.displayAddForm = true;
-    this.book = { "id": -1, "title": "", "author": "", "userID": 0, "loanDate": "", "returnDate": "" };
     this.getNextId();
   }
 

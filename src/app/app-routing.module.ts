@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
+
 const routes: Routes = [
-  // { path: '', redirectTo: '/login', pathMatch: 'full' }, // TODO: redirect to '/login' on first launch?
-  // { path: 'reviews/:id', component: ReviewDetailsComponent },
-  // { path: 'reviews', component: ReviewComponent }
-  ];
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent }
+];
 
 @NgModule({
   imports: [

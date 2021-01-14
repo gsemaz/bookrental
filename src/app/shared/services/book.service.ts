@@ -27,8 +27,6 @@ export class BookService {
             params = new HttpParams().set('title', title);
         }
 
-        console.log(params);
-
         const headers = new HttpHeaders().set('Accept', 'application/json');
 
         return this.http.get<Book[]>(this.BASE_URL, { params, headers })

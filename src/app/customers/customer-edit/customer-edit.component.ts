@@ -20,6 +20,8 @@ export class CustomerEditComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private customerService: CustomerService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.customer = { "id": -1, "firstname": "", "lastname": ""};   // dummy init preventing undefined behaviour
+
     this.fetchQueryParams();
     this.form = this.formBuilder.group({
       'firstname': ['', [Validators.minLength(1), Validators.required]],
@@ -40,7 +42,6 @@ export class CustomerEditComponent implements OnInit {
 
   showAddForm(): void {
     this.displayAddForm = true;
-    this.customer = { "id": -1, "firstname": "", "lastname": ""};
     this.getNextId();
   }
 

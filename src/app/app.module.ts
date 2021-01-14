@@ -9,11 +9,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BookModule } from './book/book.module';
 import { CustomerModule } from './customers/customer.module';
 import { ReviewModule } from './review/review.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
+    HomeComponent,
   ],
   imports: [
     // TODO: Remove FormsModule, AppRoutingModule (just everything that isn't directly used anymore) when subrouting is ready for every entity.

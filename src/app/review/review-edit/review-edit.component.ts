@@ -20,6 +20,16 @@ export class ReviewEditComponent implements OnInit {
   constructor(private builder: FormBuilder, private reviewService: ReviewService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.review = {   // dummy init preventing undefined behaviour
+      "id": -1,
+      "bookID": null,
+      "userID": null,
+      "text": "",
+      "reviewTitle": "",
+      "date": "",
+      "stars": null
+    };
+
     this.getQueryId();
     this.form = this.builder.group({
       'bookID':       ['', [Validators.min(1), Validators.required]],
@@ -36,15 +46,6 @@ export class ReviewEditComponent implements OnInit {
       this.selectedId = queryParams.get('id');
       if (this.selectedId === '-1' || !this.selectedId) {
         this.isAdd = true;
-        this.review = {
-          "id": -1,
-          "bookID": null,
-          "userID": null,
-          "text": "",
-          "reviewTitle": "",
-          "date": "",
-          "stars": null
-        };
         this.getNextId();
       } else
         this.getReview(this.selectedId);
