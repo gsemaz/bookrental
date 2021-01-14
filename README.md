@@ -25,3 +25,32 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+##Bookrental
+
+A program to do the administration of an offline book rental store.
+
+There are three relevant parts in the application:
+
+Book Administration (Daniel Lamprecht):
+  - CRUD Books
+  - Export Booklist as PDF
+  - Search
+  - Card View
+  
+User Administration (Mathias Gsell):
+  - CRUD Users
+  - Show Books of User
+  - Chart what shows the number of users over the years
+  - Search
+
+Review Administration (Lisa Zirkl):
+  - CRUD Reviews
+  - Search
+  - Detail view
+
+Required Libraries:
+  - json server
+  - apexcharts
+  - jspdf
