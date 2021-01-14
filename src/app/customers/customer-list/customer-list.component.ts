@@ -37,7 +37,7 @@ export class CustomerListComponent implements OnInit {
   }
 
   showBooksOfCustomer(customerId: number): void {
-    // this.router.navigate(['/dashboard'], { queryParams: { id: customerId }});
+    this.router.navigate(['/book/dashboard'], { queryParams: { id: customerId }});
   }
 
   editCustomer(customer: Customer): void {

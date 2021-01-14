@@ -14,7 +14,6 @@ export class ReviewComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.router.navigateByUrl('/review/list');
     this.displayList = true;
   }
 
@@ -28,7 +27,6 @@ export class ReviewComponent implements OnInit {
   }
 
   showList(): void {
-
     this.router.navigateByUrl('/review/list');
     this.displayList = true;
     this.displayForm = false;
