@@ -3,8 +3,10 @@
 </div>
 <hr>
 <nav>
-    <button [className]="displayList ? 'btn btn-primary' : 'btn btn-default'" (click)="showList()">List</button>
-    <button [className]="displayChart ? 'btn btn-primary' : 'btn btn-default'" (click)="showChart()">Chart</button>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" [className]="displayList ? 'btn btn-primary' : 'btn btn-secondary'" (click)="showList()">List</button>
+    <button type="button" [className]="displayChart ? 'btn btn-primary' : 'btn btn-secondary'" (click)="showChart()">Chart</button>
+  </div>
 </nav>
 <div>
     <router-outlet></router-outlet>
