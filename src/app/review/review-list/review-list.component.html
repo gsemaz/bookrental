@@ -1,7 +1,7 @@
 <div class="card">
     <!-- List component header -->
     <div class="header">
-        <h2 class="title">List</h2>
+        <h2 class="title">List of Book-Reviews</h2>
     </div>
 
     <!-- Search component header -->
@@ -29,7 +29,7 @@
     <!-- List view -->
     <div class="row">
         <div *ngFor="let review of reviews" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <app-review-detail [review]="review" (reviewSelectedEvent)="reviewSelected($event)" (reviewEditEvent)="addReview($event)"></app-review-detail>
+            <app-review-detail [review]="review" (reviewSelectedEvent)="selectReview($event)" (reviewEditEvent)="addReview($event)"></app-review-detail>
         </div>
     </div>
 </div>

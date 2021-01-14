@@ -12,7 +12,7 @@ import { ReviewService } from 'src/app/shared/services/review.service';
 })
 export class ReviewEditComponent implements OnInit {
 
-  isAdd: boolean;
+  addedReview: boolean;
   selectedId: string;
   review: Review;
   form: FormGroup;
@@ -20,7 +20,7 @@ export class ReviewEditComponent implements OnInit {
   constructor(private builder: FormBuilder, private reviewService: ReviewService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.review = {   // dummy init preventing undefined behaviour
+    this.review = {   
       "id": -1,
       "bookID": null,
       "userID": null,
@@ -34,9 +34,9 @@ export class ReviewEditComponent implements OnInit {
     this.form = this.builder.group({
       'bookID':       ['', [Validators.min(1), Validators.required]],
       'userID':       ['', [Validators.min(1), Validators.required]],
-      'reviewTitle':  ['', [Validators.minLength(10), Validators.required]],
-      'date':         ['', [Validators.minLength(8), Validators.required]],
-      'stars':        ['', [Validators.min(1), Validators.required]]
+      'reviewTitle':  ['', [Validators.maxLength(20), Validators.required]],
+      'date':         ['', [Validators.minLength(6), Validators.required]],
+      'stars':        ['', [Validators.min(1), Validators.max(5), Validators.required]]
     });
   }
 
@@ -45,10 +45,11 @@ export class ReviewEditComponent implements OnInit {
     .subscribe( ([pathParams, queryParams]) => {
       this.selectedId = queryParams.get('id');
       if (this.selectedId === '-1' || !this.selectedId) {
-        this.isAdd = true;
+        this.addedReview = true;
         this.getNextId();
-      } else
+      } else {
         this.getReview(this.selectedId);
+      }     
     })
   }
 

@@ -12,8 +12,6 @@ const routes: Routes = [
     children: [
       { path: 'list', component: ReviewListComponent},
       { path: 'edit', component: ReviewEditComponent},
-      // { path: 'chart', component: CustomerChartComponent},
-      // { path: 'edit', component: CustomerEditComponent}
     ]
   }
 ];

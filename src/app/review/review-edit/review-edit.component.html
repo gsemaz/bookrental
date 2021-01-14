@@ -1,22 +1,22 @@
 <div class="card">
     <div class="header">
-        <h2 *ngIf="!isAdd" class="title">Edit</h2>
-        <h2 *ngIf="isAdd" class="title">Add</h2>
+        <h2 *ngIf="!addedReview" class="title">Edit Review</h2>
+        <h2 *ngIf="addedReview" class="title">Add Review</h2>
     </div>
 
     <div class="content">
         <form [formGroup]="form">
-            <h3 *ngIf="!isAdd">Review ID {{review.id}}</h3>
+            <h3 *ngIf="!addedReview">Review with ID {{review.id}}</h3>
             <div class="form-group">
-                <label>Book ID:</label>
+                <label>Book ID:*</label>
                 <input [(ngModel)]="review.bookID" class="form-control" formControlName="bookID" name="bookID">
             </div>
             <div class="form-group">
-                <label>User ID:</label>
+                <label>User ID:*</label>
                 <input [(ngModel)]="review.userID" class="form-control" formControlName="userID" name="userID">
             </div>
             <div class="form-group">
-                <label>Reviewtitle:</label>
+                <label>Reviewtitle:*</label>
                 <input [(ngModel)]="review.reviewTitle" class="form-control" formControlName="reviewTitle" name="reviewTitle">
             </div>
             <div class="form-group">
@@ -24,16 +24,16 @@
                 <input [(ngModel)]="review.text" class="form-control" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
-                <label>Date:</label>
-                <input [(ngModel)]="review.date" name="date" class="form-control" formControlName="date" name="date">
+                <label>Date:*</label>
+                <input [(ngModel)]="review.date" name="date" class="form-control" formControlName="date" name="date" placeholder="e.g. DD.MM.YYYY">
             </div>
             <div class="form-group">
-                <label>Stars:</label>
+                <label>Stars (1-5):*</label>
                 <input [(ngModel)]="review.stars" name="stars" class="form-control" formControlName="stars" name="stars">
             </div>
-            <button *ngIf="!isAdd" [disabled]="!form.valid" class="btn btn-default" (click)="updateReview(review)">Update</button>
-            <button *ngIf="!isAdd" class="btn btn-default" (click)="deleteReview(review)">Delete</button>
-            <button *ngIf="isAdd" [disabled]="!form.valid" class="btn btn-default" (click)="addReview(review)">Add</button>
+            <button *ngIf="!addedReview" [disabled]="!form.valid" class="btn btn-default" (click)="updateReview(review)">Update</button>
+            <button *ngIf="!addedReview" class="btn btn-default" (click)="deleteReview(review)">Delete</button>
+            <button *ngIf="addedReview" [disabled]="!form.valid" class="btn btn-default" (click)="addReview(review)">Add</button>
         </form>
     </div>
 </div>

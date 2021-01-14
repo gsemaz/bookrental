@@ -28,8 +28,6 @@ export class ReviewComponent implements OnInit {
   }
 
   showList(): void {
-    if (this.displayList)
-      return;
 
     this.router.navigateByUrl('/review/list');
     this.displayList = true;

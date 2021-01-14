@@ -39,16 +39,17 @@ export class ReviewListComponent implements OnInit {
       );
   }
 
-  reviewSelected(review: Review): void {
+  selectReview(review: Review): void {
     this.stars = review.stars;
     this.bookID = review.bookID;
   }
 
   addReview(review: Review): void {
-    let idSelected = -1;
+    let selectedId = -1;
     if (review)
-      idSelected = review.id;
+      selectedId = review.id;
 
-    this.router.navigate(['/review/edit'], { queryParams: { id: idSelected }});
+    this.router.navigate(['/review/edit'], { queryParams: { id: selectedId }});
+  
   }
 }
